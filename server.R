@@ -40,7 +40,7 @@ shinyServer(function(input, output) {
     if(input$update){
     wordcloud(change(), scale=c(3,0.5), max.words=input$max, 
                                       use.r.layout=FALSE,
-                                      colors=brewer.pal(8,"Dark2"),
+                                      colors=brewer.pal(8,input$colorScheme),
                                       random.order=FALSE)
   }
   })
