@@ -13,10 +13,9 @@ shinyUI(fluidPage(
   # Sidebar with a slider and selection inputs
   sidebarPanel(width = 5,
                fileInput('data', 'Choose file to upload'),
-               checkboxInput("update", "Do it"),
                hr(),
                h4("Text manipulation"),
-               selectInput('language', 'Language:', choices=languages),
+               selectInput('language', 'Remove stopwords in lang:', choices=languages),
                checkboxInput("lower", "lower", FALSE),
                checkboxInput("stem", "Stem", FALSE),
                hr(),
@@ -25,15 +24,14 @@ shinyUI(fluidPage(
                            choices=c("Accent", "Dark2", "Paired", "Pastel1",
                                      "Pastel2", "Set1", "Set2", "Set3")),
                sliderInput("max", "Maximum Number of Words:", 
-                             min = 1,  max = 300,  value = 100)
-                
+                             min = 1,  max = 300,  value = 100),
+               hr(),
+               actionButton("update","Do it!")
   ),
   
   # Show Word Cloud
   mainPanel(
-    plotOutput("plot"),
-    textOutput("class"),
-    textOutput("class2")
+    plotOutput("plot")
   )
 ))
 
