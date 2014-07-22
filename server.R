@@ -27,7 +27,7 @@ shinyServer(function(input, output) {
         c <- tm_map(c, removeNumbers)
         c <- tm_map(c, removeWords, stopwords(input$language))
         #c <- tm_map(c, removePunctuation)
-        #c <- tm_map(c, removeWords, "xxxx")
+        if(input$remove!="") c <- tm_map(c, removeWords, input$remove)
         #       c<-gsub("<.*?>","",c)
                 
         ## cloud itself

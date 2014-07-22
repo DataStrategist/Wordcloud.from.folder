@@ -18,6 +18,7 @@ shinyUI(fluidPage(
                selectInput('language', 'Remove stopwords in lang:', choices=languages),
                checkboxInput("lower", "lower", FALSE),
                checkboxInput("stem", "Stem", FALSE),
+               textInput("remove", label = h3("Remove word (W.I.P.)"), value = "Enter text to remove..."),
                hr(),
                h4("Plotting"),
                selectInput('colorScheme', 'Color Scheme:', 
