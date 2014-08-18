@@ -2,12 +2,8 @@ library(tm)
 library(wordcloud)
 
 shinyServer(function(input, output) {
-  
-  
-
-
   change <- reactive({
-    if(input$fileInput != "No file chosen"){
+    if(input$update){
       path <- input$data[1,4]
       c <- Corpus(VectorSource(readLines(path)))
       
