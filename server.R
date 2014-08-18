@@ -30,5 +30,6 @@ shinyServer(function(input, output) {
                                       colors=brewer.pal(8,input$colorScheme),
                                       random.order=FALSE)
   }
+
   })
 })

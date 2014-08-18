@@ -1,7 +1,4 @@
-.libPaths("C:/Users/kohli/Desktop/Dropbox/R/library")
-.libPaths("K:/Dropbox/Dropbox/R/library")
 library(shiny)
-# library(shinyIncubator)
 languages <- c("english", "danish", "dutch", "finnish", 
                "french", "german", "hungarian", "italian",             
                "norwegian", "portuguese", "russian", "spanish", "swedish")
@@ -17,7 +14,7 @@ shinyUI(fluidPage(
                hr(),
                hr(),
                h4("Text manipulation"),
-               selectInput('language', 'Language:', choices=languages),
+               selectInput('language', 'Remove stopwords in lang:', choices=languages),
                checkboxInput("lower", "lower", FALSE),
                checkboxInput("stem", "Stem", FALSE),
                textInput("remove", label = "Remove word:", 
@@ -38,6 +35,7 @@ shinyUI(fluidPage(
   
   # Show Word Cloud
   mainPanel(
+
     h4("Select your *.txt file using the top button on left menu. Then click SHOW ME"),
     h4("once you're done, save your wordcloud by rightclicking image and saying 'save image'."),
     h5("(by Matt and Amit)"), 
@@ -45,5 +43,6 @@ shinyUI(fluidPage(
     plotOutput("plot"),
     textOutput("class2")
   )
+
 ))
 
