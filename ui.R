@@ -17,7 +17,7 @@ shinyUI(fluidPage(
                h4("Text manipulation"),
                selectInput('language', 'Remove stopwords in lang:', choices=languages),
                checkboxInput("lower", "lower", FALSE),
-               checkboxInput("stem", "Stem", FALSE),
+               # checkboxInput("stem", "Stem", FALSE), ## tm broken on shinyapps.io
                textInput("remove", label = "Remove word:", 
                          value = "word to remove"),
                hr(),
@@ -42,8 +42,7 @@ shinyUI(fluidPage(
     h4("Once you're done, save your wordcloud by rightclicking image and saying 'save image'."),
     h5("(by Matt and Amit)"), 
     a("Sourcecode here... improve me!", href = "https://github.com/mexindian/Wordcloud.from.folder"),
-    plotOutput("plot"),
-    textOutput("class2")
+    plotOutput("plot")
   )
 
 ))

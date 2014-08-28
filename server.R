@@ -4,18 +4,18 @@ library(wordcloud)
 shinyServer(function(input, output) {
   change <- reactive({
     if(input$update){
-      path <- input$data[1,4]
+      path <- input$data[,4]
       c <- Corpus(VectorSource(readLines(path)))
       
       ## don't ask for:
-      c <- tm_map(c, stripWhitespace)
-      c <- tm_map(c, removeNumbers)
+      ########c <- tm_map(c, stripWhitespace)                ## tm broken on shinyapps.io
+      ########c <- tm_map(c, removeNumbers)                  ## tm broken on shinyapps.io
       #c <- tm_map(c, removePunctuation)
       #   c<-gsub("<.*?>","",c)
       
       # ask for:
       if(input$lower) c <- tm_map(c, content_transformer(tolower))
-      if(input$stem) c <- tm_map(c, stemDocument)
+      ########if(input$stem) c <- tm_map(c, stemDocument)    ## tm broken on shinyapps.io
       c <- tm_map(c, removeWords, stopwords(input$language))
       if(input$remove != "") c <- tm_map(c, removeWords, input$remove)
     }
