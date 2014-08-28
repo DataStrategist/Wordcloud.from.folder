@@ -1,4 +1,5 @@
 library(shiny)
+library(shinyapps)
 languages <- c("english", "danish", "dutch", "finnish", 
                "french", "german", "hungarian", "italian",             
                "norwegian", "portuguese", "russian", "spanish", "swedish")
@@ -37,9 +38,10 @@ shinyUI(fluidPage(
   mainPanel(
 
     h4("Select your *.txt file using the top button on left menu. Then click SHOW ME"),
-    h4("once you're done, save your wordcloud by rightclicking image and saying 'save image'."),
+    h4("    (if there's an error, insert some blank lines at the bottom of the file)."),
+    h4("Once you're done, save your wordcloud by rightclicking image and saying 'save image'."),
     h5("(by Matt and Amit)"), 
-    a("Sourcecode here... Help out if u can improve!", href = "https://github.com/mexindian/Wordcloud.from.folder"),
+    a("Sourcecode here... improve me!", href = "https://github.com/mexindian/Wordcloud.from.folder"),
     plotOutput("plot"),
     textOutput("class2")
   )
