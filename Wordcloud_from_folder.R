@@ -20,4 +20,6 @@ c<-gsub("<.*?>","",c)
 wordcloud(c, scale=c(3,0.5), max.words=100, use.r.layout=FALSE, colors=brewer.pal(8,"Dark2"),random.order=FALSE)
 
 
-
+c<-unlist(c)
+d< -DocumentTermMatrix(c)
+inspect(d)
